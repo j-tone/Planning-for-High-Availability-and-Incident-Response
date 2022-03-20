@@ -1,6 +1,6 @@
 # resource "aws_lb_target_group" "udacity" {
 #   name     = "udacity-lb-tg"
-#   port     = 
+#   port     = 80
 #   protocol = "HTTP"
 #   vpc_id   = var.vpc_id
 # }
@@ -9,7 +9,7 @@
 #   count            = 2
 #   target_group_arn = aws_lb_target_group.udacity.arn
 #   target_id        = var.ec2.*.id[count.index]
-#   port             = 
+#   port             = 80
 # }
 
 # resource "aws_lb" "udacity" {
@@ -25,7 +25,7 @@
 
 # resource "aws_lb_listener" "udacity" {
 #   load_balancer_arn = aws_lb.udacity.arn
-#   port              = ""
+#   port              = "80"
 #   protocol          = "HTTP"
 
 #   default_action {
